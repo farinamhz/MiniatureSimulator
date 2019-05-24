@@ -18,13 +18,15 @@ public class DataMemory {
     private int memWrite=0;
     private int address=0;
     private int writeData=0;
-
+    private boolean[] memoryUsed=new boolean[Parameters.memorySize]; 
+    
     public void loadProgram(LinkedList<Integer> program)
     {
         int index=0;
         for(int line:program)
         {
             this.memory[index]=line;
+            this.memoryUsed[index]=true;
         }
     }
     
@@ -40,6 +42,7 @@ public class DataMemory {
         else if(memWrite==1)
         {
             this.memory[address]=writeData;
+            this.memoryUsed[address]=true;
             return 0;
         }else
             return 0;
@@ -66,5 +69,11 @@ public class DataMemory {
         this.address = address;
         return this;
     }
+
+    public boolean[] getMemoryUsed() {
+        return memoryUsed;
+    }
+    
+    
     
 }

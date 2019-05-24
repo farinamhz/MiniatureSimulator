@@ -16,6 +16,13 @@ public class RegisterFile {
     private int readAddress2=0;
     private int regWrite=0;
     
+    private boolean[] registersUsed=new boolean[16];
+
+    public RegisterFile()
+    {
+        
+    }
+    
     public int getReadData_1()
     {
         return this.registers[readAddress1];
@@ -41,8 +48,13 @@ public class RegisterFile {
     public RegisterFile setWriteData(int writeData) 
     {
         if(this.regWrite==1)
+        {
+            if(writeAddress==0)
+                return this;
+            
             this.registers[writeAddress]=writeData;
-        
+            this.registersUsed[writeAddress]=true;
+        }
         return this;
         
     }
@@ -57,5 +69,11 @@ public class RegisterFile {
         
         return this;
     }
+
+    public boolean[] getRegistersUsed() {
+        return registersUsed;
+    }
+    
+    
    
 }

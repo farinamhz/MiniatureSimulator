@@ -15,6 +15,13 @@ public class MiniatureSimulator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Instruction ins=new Instruction(101964016);
+        System.out.println(ins.getImmidiate());
+        System.out.println(ins.getOpcode());
+        System.out.println(ins.getReadAddress1());
+        System.out.println(ins.getReadAddress2());
+        System.out.println(ins.getWriteAddress());
+        
         
     }
     

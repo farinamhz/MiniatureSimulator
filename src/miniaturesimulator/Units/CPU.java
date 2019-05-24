@@ -27,11 +27,11 @@ public class CPU {
     private Mux branchMux;
     private Mux jMux;
     private Mux jalrAddressMux;
+    private Mux luishiftMux;
     
     private int instructionCount=0;
     private int runnedInstruction=0;
-    private boolean[] registersUsed=new boolean[16];
-    private boolean[] memoryUsed=new boolean[Parameters.memorySize];
+    private boolean finish=false;
     
     public void initialize(LinkedList<Integer> program)
     {
@@ -44,6 +44,7 @@ public class CPU {
         this.jMux=new Mux();
         this.branchMux=new Mux();
         this.jalrAddressMux=new Mux();
+        this.luishiftMux=new Mux();
         
         this.dataMemory.loadProgram(program);
         this.instructionCount=program.size();
@@ -53,6 +54,11 @@ public class CPU {
     {
         Instruction instruction=new Instruction(this.dataMemory.readInstruction(pc));
         this.controlUnit.calculate(instruction.getOpcode());// control unit creates signals
+        if(controlUnit.getHalt()==1)
+        {
+            finish=true;
+            return;
+        }
         //mux before reg file
         this.regDestMux.setData0(instruction.getReadAddress2())
                 .setData1(instruction.getWriteAddress())
@@ -88,7 +94,12 @@ public class CPU {
                 .setData1(pcPlus4)
                 .setSignal(controlUnit.getJalr());
         
-        this.registerFile.setWriteData(jalrMux.getOutput());
+        this.luishiftMux
+                .setData0(jalrMux.getOutput())
+                .setData1(jalrMux.getOutput()<<16)
+                .setSignal(controlUnit.getLui());
+        
+        this.registerFile.setWriteData(luishiftMux.getOutput());
         
         int branchTarget=pcPlus4+(extendedImiidiate<<2);
         
@@ -110,15 +121,56 @@ public class CPU {
                 .setSignal(controlUnit.getJ());
         
         this.pc=jalrAddressMux.getOutput();
-        
+        runnedInstruction++;
         
         
     }
     
+    public void runCompletely()
+    {
+        while(runnedInstruction<instructionCount && !finish)
+        {
+            run1Step();
+        }
+    }
+    
+    public int registersUsed()
+    {
+        int count=0;
+        for(boolean bool:this.registerFile.getRegistersUsed())
+        {
+            if(bool)
+                count++;
+        }
+        return count;
+    }
+    
+    public int memortyUsed()
+    {
+        int count=0;
+        for(boolean bool:this.dataMemory.getMemoryUsed())
+        {
+            if(bool)
+                count++;
+        }
+        return count;
+    }
+
+    public boolean isFinished() {
+        return finish;
+    }
+    
+    
     //todo
     private int extendImmidiate(int immidiate,int ExtOp)
     {
-        return 0;
+        if(ExtOp==0)
+            return immidiate;
+        
+        if((immidiate>>15)==0)
+            return immidiate;
+        
+        return immidiate+(65535<<16);
     }
     
     

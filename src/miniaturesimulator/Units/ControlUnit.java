@@ -23,5 +23,5 @@ public interface ControlUnit {
     public int getJalr();//1 for jalr and 0 for others
     public int getJ();//1 for j and 0 for others
     public int getHalt();// 1 for halt and 0 for others
-    
+    public int getLui();
 }
