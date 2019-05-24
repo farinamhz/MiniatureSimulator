@@ -9,13 +9,6 @@ package miniaturesimulator;
  *
  * @author Moses
  */
-public class MiniatureSimulator {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-    }
-    
+public class Parameters {
+    public static final int memorySize=16000;
 }

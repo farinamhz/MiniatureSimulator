@@ -11,5 +11,5 @@ package miniaturesimulator.AlU;
  */
 public interface ALU {
     public int calculate(int data1,int data2,int control);
-    public boolean isZero();
+    public int isZero();
 }
