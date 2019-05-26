@@ -255,7 +255,7 @@
               <Font name="Eras Demi ITC" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\FARINAM\Desktop\button_initialize.png"/>
+              <Image iconType="2" name="C:\Users\FARINAM\Documents\NetBeansProjects\MiniatureSimulator\src\miniaturesimulator\button_initialize.png"/>
             </Property>
           </Properties>
           <Events>
@@ -448,7 +448,7 @@
               <Font name="Eras Demi ITC" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\FARINAM\Desktop\button_step-run.png"/>
+              <Image iconType="2" name="C:\Users\FARINAM\Documents\NetBeansProjects\MiniatureSimulator\src\miniaturesimulator\button_step-run.png"/>
             </Property>
           </Properties>
           <Events>
@@ -464,7 +464,7 @@
               <Font name="Eras Demi ITC" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\FARINAM\Desktop\button_run.png"/>
+              <Image iconType="2" name="C:\Users\FARINAM\Documents\NetBeansProjects\MiniatureSimulator\src\miniaturesimulator\button_run.png"/>
             </Property>
           </Properties>
           <Events>

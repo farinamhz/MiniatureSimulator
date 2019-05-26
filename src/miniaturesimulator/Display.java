@@ -80,7 +80,7 @@ public class Display extends javax.swing.JFrame {
 
         Button_Initialize.setBackground(java.awt.SystemColor.activeCaptionText);
         Button_Initialize.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button_Initialize.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_initialize.png")); // NOI18N
+        Button_Initialize.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Documents\\NetBeansProjects\\MiniatureSimulator\\src\\miniaturesimulator\\button_initialize.png")); // NOI18N
         Button_Initialize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_InitializeActionPerformed(evt);
@@ -154,7 +154,7 @@ public class Display extends javax.swing.JFrame {
 
         Button_StepRun.setBackground(new java.awt.Color(153, 153, 153));
         Button_StepRun.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button_StepRun.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_step-run.png")); // NOI18N
+        Button_StepRun.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Documents\\NetBeansProjects\\MiniatureSimulator\\src\\miniaturesimulator\\button_step-run.png")); // NOI18N
         Button_StepRun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_StepRunActionPerformed(evt);
@@ -163,7 +163,7 @@ public class Display extends javax.swing.JFrame {
 
         Button_Run.setBackground(new java.awt.Color(153, 153, 153));
         Button_Run.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button_Run.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_run.png")); // NOI18N
+        Button_Run.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Documents\\NetBeansProjects\\MiniatureSimulator\\src\\miniaturesimulator\\button_run.png")); // NOI18N
         Button_Run.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_RunActionPerformed(evt);
