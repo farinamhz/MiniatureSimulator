@@ -5,11 +5,14 @@
  */
 package miniaturesimulator;
 
+import miniaturesimulator.Units.CPU;
+
 /**
  *
  * @author FARINAM
  */
 public class Display extends javax.swing.JFrame {
+    private CPU cpu= new CPU();
 
     /**
      * Creates new form Display
@@ -28,7 +31,7 @@ public class Display extends javax.swing.JFrame {
     private void initComponents() {
 
         Panel = new javax.swing.JPanel();
-        Button1 = new javax.swing.JButton();
+        Button_Initialize = new javax.swing.JButton();
         R1_label = new java.awt.Label();
         R3_label = new java.awt.Label();
         R2_label = new java.awt.Label();
@@ -45,8 +48,8 @@ public class Display extends javax.swing.JFrame {
         R14_label = new java.awt.Label();
         R13_label = new java.awt.Label();
         R15_label = new java.awt.Label();
-        Button3 = new javax.swing.JButton();
-        Button2 = new javax.swing.JButton();
+        Button_StepRun = new javax.swing.JButton();
+        Button_Run = new javax.swing.JButton();
         MemoryUsage_label = new javax.swing.JLabel();
         RegUsage_label = new javax.swing.JLabel();
         RegUsage = new javax.swing.JLabel();
@@ -73,12 +76,12 @@ public class Display extends javax.swing.JFrame {
         Panel.setBackground(new java.awt.Color(203, 213, 224));
         Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(21, 63, 105), 2));
 
-        Button1.setBackground(java.awt.SystemColor.activeCaptionText);
-        Button1.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button1.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_initialize.png")); // NOI18N
-        Button1.addActionListener(new java.awt.event.ActionListener() {
+        Button_Initialize.setBackground(java.awt.SystemColor.activeCaptionText);
+        Button_Initialize.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
+        Button_Initialize.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_initialize.png")); // NOI18N
+        Button_Initialize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button1ActionPerformed(evt);
+                Button_InitializeActionPerformed(evt);
             }
         });
 
@@ -147,21 +150,21 @@ public class Display extends javax.swing.JFrame {
         R15_label.setForeground(new java.awt.Color(61, 66, 97));
         R15_label.setText("R15    =");
 
-        Button3.setBackground(new java.awt.Color(153, 153, 153));
-        Button3.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button3.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_step-run.png")); // NOI18N
-        Button3.addActionListener(new java.awt.event.ActionListener() {
+        Button_StepRun.setBackground(new java.awt.Color(153, 153, 153));
+        Button_StepRun.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
+        Button_StepRun.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_step-run.png")); // NOI18N
+        Button_StepRun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button3ActionPerformed(evt);
+                Button_StepRunActionPerformed(evt);
             }
         });
 
-        Button2.setBackground(new java.awt.Color(153, 153, 153));
-        Button2.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button2.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_run.png")); // NOI18N
-        Button2.addActionListener(new java.awt.event.ActionListener() {
+        Button_Run.setBackground(new java.awt.Color(153, 153, 153));
+        Button_Run.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
+        Button_Run.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_run.png")); // NOI18N
+        Button_Run.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button2ActionPerformed(evt);
+                Button_RunActionPerformed(evt);
             }
         });
 
@@ -282,9 +285,9 @@ public class Display extends javax.swing.JFrame {
                             .addComponent(MemoryUsage, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(Button_StepRun, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Button_Run, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Button_Initialize, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(37, 37, 37))))
         );
         PanelLayout.setVerticalGroup(
@@ -375,11 +378,11 @@ public class Display extends javax.swing.JFrame {
                             .addComponent(R15_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Button_Initialize, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Button_Run, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Button_StepRun, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -397,18 +400,49 @@ public class Display extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
+    private void Button_InitializeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_InitializeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Button1ActionPerformed
+        
+    }//GEN-LAST:event_Button_InitializeActionPerformed
 
-    private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
+    private void Button_StepRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_StepRunActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Button3ActionPerformed
+        cpu.runCompletely();
+        regTable();
+        usage();
+    }//GEN-LAST:event_Button_StepRunActionPerformed
 
-    private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button2ActionPerformed
-
+    private void Button_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RunActionPerformed
+        cpu.run1Step();
+        regTable();
+        usage();
+    }//GEN-LAST:event_Button_RunActionPerformed
+    private void regTable (){
+        int[] regs=null ; //= cpu.regs ;
+        R0.setText(regs[0]+"");
+        R1.setText(regs[1]+"");
+        R2.setText(regs[2]+"");
+        R3.setText(regs[3]+"");
+        R4.setText(regs[4]+"");
+        R5.setText(regs[5]+"");
+        R6.setText(regs[6]+"");
+        R7.setText(regs[7]+"");
+        R8.setText(regs[8]+"");
+        R9.setText(regs[9]+"");
+        R10.setText(regs[10]+"");
+        R11.setText(regs[11]+"");
+        R12.setText(regs[12]+"");
+        R13.setText(regs[13]+"");
+        R14.setText(regs[14]+"");
+        R15.setText(regs[15]+"");
+        
+        
+    }
+    private void usage (){
+        
+        RegUsage.setText(cpu.registersUsed()+"");
+        MemoryUsage.setText(cpu.memortyUsed()+"");
+    }
     /**
      * @param args the command line arguments
      */
@@ -445,9 +479,9 @@ public class Display extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button1;
-    private javax.swing.JButton Button2;
-    private javax.swing.JButton Button3;
+    private javax.swing.JButton Button_Initialize;
+    private javax.swing.JButton Button_Run;
+    private javax.swing.JButton Button_StepRun;
     private javax.swing.JLabel MemoryUsage;
     private javax.swing.JLabel MemoryUsage_label;
     private javax.swing.JPanel Panel;
