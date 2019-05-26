@@ -73,6 +73,10 @@ public class RegisterFile {
     public boolean[] getRegistersUsed() {
         return registersUsed;
     }
+
+    public int[] getRegisters() {
+        return registers;
+    }
     
     
    

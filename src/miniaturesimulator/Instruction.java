@@ -21,11 +21,11 @@ public class Instruction {
     {
         this.machineCode=machineCode;
         
-        this.opcode=machineCode>>24;
-        this.readAddress1=(machineCode>>20)&0xf;
-        this.readAddress2=(machineCode>>16)&0xf;
-        this.writeAddress=(machineCode>>12)&0xf;
-        this.immidiate=(machineCode>>0)&0xffff;
+        this.opcode=machineCode>>>24;
+        this.readAddress1=(machineCode>>>20)&0xf;
+        this.readAddress2=(machineCode>>>16)&0xf;
+        this.writeAddress=(machineCode>>>12)&0xf;
+        this.immidiate=(machineCode)&0xffff;
     }
 
     public int getMachineCode() {

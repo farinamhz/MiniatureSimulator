@@ -7,6 +7,7 @@ package miniaturesimulator.Units;
 
 import java.util.LinkedList;
 import miniaturesimulator.AlU.ALU;
+import miniaturesimulator.AlU.AlU_Ultimate;
 import miniaturesimulator.Instruction;
 import miniaturesimulator.Parameters;
 
@@ -37,6 +38,7 @@ public class CPU {
     {
         this.registerFile=new RegisterFile();
         this.dataMemory=new DataMemory();
+        this.alu=new AlU_Ultimate();
         this.regDestMux=new Mux();
         this.aluSrcMux=new Mux();
         this.memToRegMux=new Mux();
@@ -161,7 +163,7 @@ public class CPU {
     }
     
     
-    //todo
+   
     private int extendImmidiate(int immidiate,int ExtOp)
     {
         if(ExtOp==0)
@@ -171,6 +173,11 @@ public class CPU {
             return immidiate;
         
         return immidiate+(65535<<16);
+    }
+    
+    public int[] getRegs()
+    {
+        return this.registerFile.getRegisters();
     }
     
     
