@@ -75,7 +75,7 @@ public class Display extends javax.swing.JFrame {
 
         Button1.setBackground(java.awt.SystemColor.activeCaptionText);
         Button1.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button1.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button1.png")); // NOI18N
+        Button1.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_initialize.png")); // NOI18N
         Button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button1ActionPerformed(evt);
@@ -149,7 +149,7 @@ public class Display extends javax.swing.JFrame {
 
         Button3.setBackground(new java.awt.Color(153, 153, 153));
         Button3.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button3.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button3.png")); // NOI18N
+        Button3.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_step-run.png")); // NOI18N
         Button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button3ActionPerformed(evt);
@@ -158,7 +158,7 @@ public class Display extends javax.swing.JFrame {
 
         Button2.setBackground(new java.awt.Color(153, 153, 153));
         Button2.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button2.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button2.png")); // NOI18N
+        Button2.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Desktop\\button_run.png")); // NOI18N
         Button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button2ActionPerformed(evt);
@@ -300,7 +300,7 @@ public class Display extends javax.swing.JFrame {
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(MemoryUsage_label, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(MemoryUsage))
-                        .addGap(73, 73, 73)
+                        .addGap(37, 37, 37)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(R0)
                             .addComponent(R0_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -364,14 +364,15 @@ public class Display extends javax.swing.JFrame {
                                     .addComponent(R13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelLayout.createSequentialGroup()
-                                        .addComponent(R14_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(R15_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(R15)))
+                                    .addComponent(R14_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(R14)))
-                            .addComponent(R9)))
+                            .addComponent(R9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addComponent(R15)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(R15_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -379,12 +380,8 @@ public class Display extends javax.swing.JFrame {
                         .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-
-        R10_label.getAccessibleContext().setAccessibleName("R10    =");
-        R13_label.getAccessibleContext().setAccessibleName("R13    =");
-        R15_label.getAccessibleContext().setAccessibleName("R15    =");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -394,7 +391,7 @@ public class Display extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 616, Short.MAX_VALUE)
+            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
