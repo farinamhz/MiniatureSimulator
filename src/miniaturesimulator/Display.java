@@ -5,6 +5,8 @@
  */
 package miniaturesimulator;
 
+import java.io.File;
+import javax.swing.JFileChooser;
 import miniaturesimulator.Units.CPU;
 
 /**
@@ -401,18 +403,23 @@ public class Display extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button_InitializeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_InitializeActionPerformed
-        // TODO add your handling code here:
         
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String path = f.getAbsolutePath();
+        cpu.initialize(path);
     }//GEN-LAST:event_Button_InitializeActionPerformed
 
     private void Button_StepRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_StepRunActionPerformed
-        // TODO add your handling code here:
+        
         cpu.runCompletely();
         regTable();
         usage();
     }//GEN-LAST:event_Button_StepRunActionPerformed
 
     private void Button_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RunActionPerformed
+        
         cpu.run1Step();
         regTable();
         usage();
