@@ -34,7 +34,7 @@ public class CPU {
     private int runnedInstruction=0;
     private boolean finish=false;
     
-    public void initialize(LinkedList<Integer> program)
+    public void initialize(String filepath)
     {
         this.registerFile=new RegisterFile();
         this.dataMemory=new DataMemory();
@@ -48,8 +48,8 @@ public class CPU {
         this.jalrAddressMux=new Mux();
         this.luishiftMux=new Mux();
         
-        this.dataMemory.loadProgram(program);
-        this.instructionCount=program.size();
+//        this.dataMemory.loadProgram(program);
+//        this.instructionCount=program.size();
     }
     
     public void run1Step()
