@@ -110,9 +110,9 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Button3" min="-2" pref="109" max="-2" attributes="0"/>
-                              <Component id="Button2" min="-2" pref="109" max="-2" attributes="0"/>
-                              <Component id="Button1" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="Button_StepRun" min="-2" pref="109" max="-2" attributes="0"/>
+                              <Component id="Button_Run" min="-2" pref="109" max="-2" attributes="0"/>
+                              <Component id="Button_Initialize" alignment="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
@@ -233,11 +233,11 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="Button1" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="Button_Initialize" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Button2" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="Button_Run" min="-2" pref="31" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Button3" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="Button_StepRun" min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -246,7 +246,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="Button1">
+        <Component class="javax.swing.JButton" name="Button_Initialize">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" id="Active Caption Text" palette="2" red="0" type="palette"/>
@@ -259,7 +259,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_InitializeActionPerformed"/>
           </Events>
         </Component>
         <Component class="java.awt.Label" name="R1_label">
@@ -439,7 +439,7 @@
             <Property name="text" type="java.lang.String" value="R15    ="/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Button3">
+        <Component class="javax.swing.JButton" name="Button_StepRun">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -452,10 +452,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_StepRunActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Button2">
+        <Component class="javax.swing.JButton" name="Button_Run">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -468,7 +468,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_RunActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="MemoryUsage_label">
