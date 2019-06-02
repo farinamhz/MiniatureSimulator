@@ -5,9 +5,14 @@
  */
 package miniaturesimulator.Units;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.LinkedList;
 import miniaturesimulator.AlU.ALU;
 import miniaturesimulator.AlU.AlU_Ultimate;
+import miniaturesimulator.CodeFileReader;
 import miniaturesimulator.Instruction;
 import miniaturesimulator.Parameters;
 
@@ -34,11 +39,13 @@ public class CPU {
     private int runnedInstruction=0;
     private boolean finish=false;
     
-    public void initialize(String filepath)
+    public void initialize(String filepath) throws IOException
     {
+        
         this.registerFile=new RegisterFile();
         this.dataMemory=new DataMemory();
         this.alu=new AlU_Ultimate();
+        this.controlUnit=new ControlUnitPython();
         this.regDestMux=new Mux();
         this.aluSrcMux=new Mux();
         this.memToRegMux=new Mux();
@@ -48,8 +55,10 @@ public class CPU {
         this.jalrAddressMux=new Mux();
         this.luishiftMux=new Mux();
         
-//        this.dataMemory.loadProgram(program);
-//        this.instructionCount=program.size();
+        LinkedList<Integer> program=new CodeFileReader(filepath).read();
+        
+        this.dataMemory.loadProgram(program);
+        this.instructionCount=program.size();
     }
     
     public void run1Step()
@@ -85,8 +94,8 @@ public class CPU {
                 .setWriteData(this.registerFile.getReadData_2());
         
         this.memToRegMux
-                .setData0(this.dataMemory.readData())
-                .setData1(aluOutput)
+                .setData0(aluOutput)
+                .setData1(this.dataMemory.readData())
                 .setSignal(controlUnit.getMemToReg());
         
         int pcPlus4=pc+4;
@@ -120,7 +129,7 @@ public class CPU {
         this.jalrAddressMux
                 .setData0(jMux.getOutput())
                 .setData1(this.registerFile.getReadData_1())
-                .setSignal(controlUnit.getJ());
+                .setSignal(controlUnit.getJalr());
         
         this.pc=jalrAddressMux.getOutput();
         runnedInstruction++;

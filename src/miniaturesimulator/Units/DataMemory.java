@@ -27,6 +27,7 @@ public class DataMemory {
         {
             this.memory[index]=line;
             this.memoryUsed[index]=true;
+            index++;
         }
     }
     
