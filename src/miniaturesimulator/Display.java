@@ -490,6 +490,11 @@ public class Display extends javax.swing.JFrame {
         RegUsage.setText(cpu.registersUsed()+"");
         MemoryUsage.setText(cpu.memortyUsed()+"");
     }
+    private void Instruction(){
+    
+        //RunnedInstructions.setText(cpu.);
+        //TotalInstructions.setText(cpu.);
+    }
     /**
      * @param args the command line arguments
      */
