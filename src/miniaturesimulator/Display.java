@@ -456,6 +456,7 @@ public class Display extends javax.swing.JFrame {
         cpu.runCompletely();
         regTable();
         usage();
+        instruction();
     }//GEN-LAST:event_Button_StepRunActionPerformed
 
     private void Button_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RunActionPerformed
@@ -463,6 +464,8 @@ public class Display extends javax.swing.JFrame {
         cpu.run1Step();
         regTable();
         usage();
+        instruction();
+        
     }//GEN-LAST:event_Button_RunActionPerformed
     private void regTable (){
         int[] regs=cpu.getRegs() ; //= cpu.regs ;
@@ -490,7 +493,7 @@ public class Display extends javax.swing.JFrame {
         RegUsage.setText(cpu.registersUsed()+"");
         MemoryUsage.setText(cpu.memortyUsed()+"");
     }
-    private void Instruction(){
+    private void instruction(){
     
         //RunnedInstructions.setText(cpu.);
         //TotalInstructions.setText(cpu.);
