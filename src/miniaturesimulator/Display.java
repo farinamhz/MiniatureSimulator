@@ -437,11 +437,18 @@ public class Display extends javax.swing.JFrame {
     }
     private void Button_InitializeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_InitializeActionPerformed
         
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f = chooser.getSelectedFile();
-        String path = f.getAbsolutePath();
-        cpu.initialize(path);
+        try {
+//            JFileChooser chooser = new JFileChooser();
+//            chooser.showOpenDialog(null);
+//            File f = chooser.getSelectedFile();
+//            String path = f.getAbsolutePath();
+//            cpu.initialize(path);
+            cpu.initialize("C:\\Users\\Moses\\Documents\\NetBeansProjects\\MiniatureAssemblerGitted\\outputs\\out1");
+             regTable();
+            usage();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }//GEN-LAST:event_Button_InitializeActionPerformed
 
     private void Button_StepRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_StepRunActionPerformed
@@ -458,7 +465,7 @@ public class Display extends javax.swing.JFrame {
         usage();
     }//GEN-LAST:event_Button_RunActionPerformed
     private void regTable (){
-        int[] regs=null ; //= cpu.regs ;
+        int[] regs=cpu.getRegs() ; //= cpu.regs ;
         R0.setText(regs[0]+"");
         R1.setText(regs[1]+"");
         R2.setText(regs[2]+"");
