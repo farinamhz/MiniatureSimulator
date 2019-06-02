@@ -6,6 +6,9 @@
 package miniaturesimulator;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import miniaturesimulator.Units.CPU;
 
@@ -80,7 +83,7 @@ public class Display extends javax.swing.JFrame {
 
         Button_Initialize.setBackground(java.awt.SystemColor.activeCaptionText);
         Button_Initialize.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button_Initialize.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Documents\\NetBeansProjects\\MiniatureSimulator\\src\\miniaturesimulator\\button_initialize.png")); // NOI18N
+        Button_Initialize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/miniaturesimulator/button_initialize.png"))); // NOI18N
         Button_Initialize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_InitializeActionPerformed(evt);
@@ -154,7 +157,7 @@ public class Display extends javax.swing.JFrame {
 
         Button_StepRun.setBackground(new java.awt.Color(153, 153, 153));
         Button_StepRun.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button_StepRun.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Documents\\NetBeansProjects\\MiniatureSimulator\\src\\miniaturesimulator\\button_step-run.png")); // NOI18N
+        Button_StepRun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/miniaturesimulator/button_step-run.png"))); // NOI18N
         Button_StepRun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_StepRunActionPerformed(evt);
@@ -163,7 +166,7 @@ public class Display extends javax.swing.JFrame {
 
         Button_Run.setBackground(new java.awt.Color(153, 153, 153));
         Button_Run.setFont(new java.awt.Font("Eras Demi ITC", 0, 12)); // NOI18N
-        Button_Run.setIcon(new javax.swing.ImageIcon("C:\\Users\\FARINAM\\Documents\\NetBeansProjects\\MiniatureSimulator\\src\\miniaturesimulator\\button_run.png")); // NOI18N
+        Button_Run.setIcon(new javax.swing.ImageIcon(getClass().getResource("/miniaturesimulator/button_run.png"))); // NOI18N
         Button_Run.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_RunActionPerformed(evt);
@@ -404,11 +407,18 @@ public class Display extends javax.swing.JFrame {
 
     private void Button_InitializeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_InitializeActionPerformed
         
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f = chooser.getSelectedFile();
-        String path = f.getAbsolutePath();
-        cpu.initialize(path);
+        try {
+//            JFileChooser chooser = new JFileChooser();
+//            chooser.showOpenDialog(null);
+//            File f = chooser.getSelectedFile();
+//            String path = f.getAbsolutePath();
+//            cpu.initialize(path);
+            cpu.initialize("C:\\Users\\Moses\\Documents\\NetBeansProjects\\MiniatureAssemblerGitted\\outputs\\out1");
+             regTable();
+            usage();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }//GEN-LAST:event_Button_InitializeActionPerformed
 
     private void Button_StepRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_StepRunActionPerformed
@@ -425,7 +435,7 @@ public class Display extends javax.swing.JFrame {
         usage();
     }//GEN-LAST:event_Button_RunActionPerformed
     private void regTable (){
-        int[] regs=null ; //= cpu.regs ;
+        int[] regs=cpu.getRegs() ; //= cpu.regs ;
         R0.setText(regs[0]+"");
         R1.setText(regs[1]+"");
         R2.setText(regs[2]+"");
