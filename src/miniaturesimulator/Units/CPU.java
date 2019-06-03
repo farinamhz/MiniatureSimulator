@@ -98,7 +98,7 @@ public class CPU {
                 .setData1(this.dataMemory.readData())
                 .setSignal(controlUnit.getMemToReg());
         
-        int pcPlus4=pc+4;
+        int pcPlus4=pc+1;
         
         this.jalrMux
                 .setData0(memToRegMux.getOutput())
@@ -112,7 +112,7 @@ public class CPU {
         
         this.registerFile.setWriteData(luishiftMux.getOutput());
         
-        int branchTarget=pcPlus4+(extendedImiidiate<<2);
+        int branchTarget=pcPlus4+(extendedImiidiate);
         
         int branchSignal=(controlUnit.getBranch() & alu.isZero());
         
@@ -123,7 +123,7 @@ public class CPU {
         
         this.jMux
                 .setData0(branchMux.getOutput())
-                .setData1(instruction.getImmidiate()<<2)
+                .setData1(instruction.getImmidiate())
                 .setSignal(controlUnit.getJ());
         
         this.jalrAddressMux
@@ -134,12 +134,11 @@ public class CPU {
         this.pc=jalrAddressMux.getOutput();
         runnedInstruction++;
         
-        
     }
     
     public void runCompletely()
     {
-        while(runnedInstruction<instructionCount && !finish)
+        while(!finish)
         {
             run1Step();
         }
@@ -188,6 +187,16 @@ public class CPU {
     {
         return this.registerFile.getRegisters();
     }
+
+    public int getInstructionCount() {
+        return instructionCount;
+    }
+
+    public int getRunnedInstruction() {
+        return runnedInstruction;
+    }
+
+    
     
     
 }

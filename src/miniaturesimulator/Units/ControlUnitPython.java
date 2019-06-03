@@ -22,7 +22,7 @@ public class ControlUnitPython implements ControlUnit{
     @Override
     public void calculate(int opcode) {
         try {
-            ProcessBuilder pb=new ProcessBuilder("ControlUnitPython.exe", opcode+"");
+            ProcessBuilder pb=new ProcessBuilder("python","ControlUnitPython.py", opcode+"");
             Process p=pb.start();
             while(p.isAlive());
             
@@ -75,7 +75,7 @@ public class ControlUnitPython implements ControlUnit{
 
     @Override
     public int getALUCtr() {
-        return Integer.parseInt(this.signals[11]);
+        return Integer.parseInt(this.signals[12].trim());
     }
 
     @Override
@@ -105,7 +105,7 @@ public class ControlUnitPython implements ControlUnit{
 
     @Override
     public int getLui() {
-        return Integer.parseInt(this.signals[12].trim());
+        return Integer.parseInt(this.signals[11].trim());
     }
     
     

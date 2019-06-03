@@ -16,8 +16,8 @@ import miniaturesimulator.Units.CPU;
  * @author FARINAM
  */
 public class Display extends javax.swing.JFrame {
-    private CPU cpu= new CPU();
-    
+    private CPU cpu;
+    private volatile boolean updated=false;
     
 
     /**
@@ -82,6 +82,7 @@ public class Display extends javax.swing.JFrame {
         TotalInstructions = new javax.swing.JLabel();
         RunnedInstructions = new javax.swing.JLabel();
         RunnedInstructions_label = new javax.swing.JLabel();
+        statusLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -249,6 +250,8 @@ public class Display extends javax.swing.JFrame {
         RunnedInstructions_label.setFont(new java.awt.Font("Constantia", 1, 11)); // NOI18N
         RunnedInstructions_label.setText("Runned Instructions  :");
 
+        statusLabel.setFont(new java.awt.Font("Constantia", 1, 11)); // NOI18N
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
@@ -310,7 +313,8 @@ public class Display extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Button_StepRun, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button_Initialize, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Button_Run, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Button_Run, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(statusLabel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
@@ -347,7 +351,6 @@ public class Display extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Button_Run, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(4, 4, 4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,7 +365,7 @@ public class Display extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addComponent(R4_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(R5_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -375,7 +378,9 @@ public class Display extends javax.swing.JFrame {
                                     .addComponent(R7_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(R7)))
                             .addComponent(R5)))
-                    .addComponent(R4))
+                    .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(R4)
+                        .addComponent(statusLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(R8_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -413,8 +418,10 @@ public class Display extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(R15_label, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(R15))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
+
+        statusLabel.getAccessibleContext().setAccessibleName("status");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -438,35 +445,89 @@ public class Display extends javax.swing.JFrame {
     private void Button_InitializeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_InitializeActionPerformed
         
         try {
-//            JFileChooser chooser = new JFileChooser();
-//            chooser.showOpenDialog(null);
-//            File f = chooser.getSelectedFile();
-//            String path = f.getAbsolutePath();
-//            cpu.initialize(path);
-            cpu.initialize("C:\\Users\\Moses\\Documents\\NetBeansProjects\\MiniatureAssemblerGitted\\outputs\\out1");
-             regTable();
-            usage();
+            cpu=null;
+            statusLabel.setText("");
+            
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File f = chooser.getSelectedFile();
+            String path = f.getAbsolutePath();
+            System.out.println(path);
+            cpu=new CPU();
+            cpu.initialize(path);
+//            cpu.initialize("C:\\Users\\Moses\\Documents\\NetBeansProjects\\MiniatureAssemblerGitted\\outputs\\out1");
+            updateUi();
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            
         }
     }//GEN-LAST:event_Button_InitializeActionPerformed
 
     private void Button_StepRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_StepRunActionPerformed
         
-        cpu.runCompletely();
-        regTable();
-        usage();
-        instruction();
+        if(cpu==null)
+        {
+           statusLabel.setText("no code to run");
+            return; 
+        }
+        
+        if(cpu.isFinished())
+        {
+            statusLabel.setText("code is finished");
+            
+            return;
+        }
+        updated=false;
+       cpu.run1Step();
+        updateUi();
+        
+        if(cpu.isFinished())
+        {
+            statusLabel.setText("code is finished");
+            
+            return;
+        }
     }//GEN-LAST:event_Button_StepRunActionPerformed
 
     private void Button_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RunActionPerformed
         
-        cpu.run1Step();
+        if(cpu==null)
+        {
+           statusLabel.setText("no code to run");
+            return; 
+        }
+        
+        if(cpu.isFinished())
+        {
+            statusLabel.setText("code is finished");
+            return;
+        }
+        
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(!cpu.isFinished())
+                {
+                    updated=false;
+                cpu.run1Step();
+                updateUi();
+                while(!updated);
+                }
+                statusLabel.setText("code is finished");
+            }
+        }).start();
+        
+        
+        
+        
+    }//GEN-LAST:event_Button_RunActionPerformed
+    
+    private void updateUi()
+    {
         regTable();
         usage();
         instruction();
-        
-    }//GEN-LAST:event_Button_RunActionPerformed
+        this.updated=true;
+    }
     private void regTable (){
         int[] regs=cpu.getRegs() ; //= cpu.regs ;
         R0.setText(regs[0]+"");
@@ -495,8 +556,8 @@ public class Display extends javax.swing.JFrame {
     }
     private void instruction(){
     
-        //RunnedInstructions.setText(cpu.);
-        //TotalInstructions.setText(cpu.);
+        RunnedInstructions.setText(cpu.getRunnedInstruction()+"");
+        TotalInstructions.setText(cpu.getInstructionCount()+"");
     }
     /**
      * @param args the command line arguments
@@ -578,5 +639,6 @@ public class Display extends javax.swing.JFrame {
     private javax.swing.JLabel RunnedInstructions;
     private javax.swing.JLabel RunnedInstructions_label;
     private javax.swing.JLabel TotalInstructions;
+    private javax.swing.JLabel statusLabel;
     // End of variables declaration//GEN-END:variables
 }
