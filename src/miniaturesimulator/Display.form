@@ -52,55 +52,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="R6_label" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="R11_label" max="32767" attributes="0"/>
-                                  <Component id="R10_label" max="32767" attributes="0"/>
-                                  <Component id="R12_label" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="R13_label" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="R14_label" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="R15_label" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="R9_label7" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="R8_label" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="R5_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="R4_label" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="R3_label" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="R2_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="R1_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="R0_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="R7_label" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="R1" alignment="0" pref="135" max="32767" attributes="0"/>
-                                      <Component id="R0" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R3" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R4" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R5" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R15" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R14" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R13" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R12" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R11" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R10" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R9" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R8" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R7" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="R6" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="R2" min="-2" pref="135" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="RegUsage_label" min="-2" max="-2" attributes="0"/>
@@ -110,35 +62,109 @@
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TotalInstructions" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="MemoryUsage" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <Component id="RegUsage" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="TotalInstructions" alignment="0" max="32767" attributes="0"/>
+                              <Component id="RunnedInstructions" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="RegUsage" max="32767" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="MemoryUsage" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="MemAddr_label" min="-2" max="-2" attributes="0"/>
+                                      <Component id="MemoryAddress" min="-2" pref="70" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="RunnedInstructions" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="statusLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="MemAddr" min="-2" pref="68" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="R6_label" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="R11_label" max="32767" attributes="0"/>
+                                          <Component id="R10_label" max="32767" attributes="0"/>
+                                          <Component id="R12_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="R13_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="R14_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="R15_label" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="R9_label7" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="R5_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="R4_label" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Component id="R3_label" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="R2_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="R1_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="R0_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="R7_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="R2" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="R1" alignment="0" pref="135" max="32767" attributes="0"/>
+                                          <Component id="R0" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R5" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R15" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R13" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R12" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R11" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R10" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R9" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R7" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R6" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="R14" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="R8_label" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="R8" min="-2" pref="135" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="60" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="Button_Initialize" min="-2" pref="162" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="Button_Reset" min="-2" pref="162" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Button_Run" alignment="1" min="-2" pref="162" max="-2" attributes="0"/>
+                                      <Component id="Button_StepRun" alignment="1" min="-2" pref="162" max="-2" attributes="0"/>
+                                      <Component id="Button_Stop" alignment="1" min="-2" pref="162" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="Button_StepRun" min="-2" pref="108" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="statusLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="109" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="Button_Initialize" min="-2" pref="109" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="Button_Run" min="-2" pref="108" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -149,129 +175,135 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="RegUsage_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="RegUsage" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="MemAddr_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="MemAddr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="MemoryUsage_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="MemoryUsage" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="MemoryAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="RunnedInstructions_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="RunnedInstructions" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="MemoryUsage_label1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TotalInstructions" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="MemoryUsage_label1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="TotalInstructions" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R0_label" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R1_label" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="Button_Run" min="-2" pref="31" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R2_label" min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="R2" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R3_label" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="Button_StepRun" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="R0" min="-2" max="-2" attributes="0"/>
+                              <Component id="R0_label" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="R4_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="R4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="statusLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="R1_label" min="-2" max="-2" attributes="0"/>
+                              <Component id="R1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="R5_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="R5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="R6_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="R6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="R7" min="-2" max="-2" attributes="0"/>
-                              <Component id="R7_label" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="R8_label" min="-2" max="-2" attributes="0"/>
-                              <Component id="R8" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="R9_label7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R10_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                          <Component id="R11_label" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="R11" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R12" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R12_label" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R13_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="R14_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R14" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="R9" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="R15_label" min="-2" max="-2" attributes="0"/>
-                              <Component id="R15" min="-2" max="-2" attributes="0"/>
+                              <Component id="R2_label" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="R2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="Button_Initialize" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Button_Initialize" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="Button_Reset" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="R3_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="R3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="R4" min="-2" max="-2" attributes="0"/>
+                              <Component id="R4_label" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="Button_Run" min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="statusLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Component id="R5" min="-2" max="-2" attributes="0"/>
+                          <Component id="R5_label" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          <Component id="Button_Stop" min="-2" pref="31" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="R6" min="-2" max="-2" attributes="0"/>
+                              <Component id="R6_label" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="R7_label" min="-2" max="-2" attributes="0"/>
+                              <Component id="R7" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="Button_StepRun" min="-2" pref="31" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="R8_label" min="-2" max="-2" attributes="0"/>
+                      <Component id="R8" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="R9" min="-2" max="-2" attributes="0"/>
+                      <Component id="R9_label7" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="R10_label" min="-2" max="-2" attributes="0"/>
+                      <Component id="R10" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="R11" min="-2" max="-2" attributes="0"/>
+                      <Component id="R11_label" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="R12_label" min="-2" max="-2" attributes="0"/>
+                      <Component id="R12" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="R13" min="-2" max="-2" attributes="0"/>
+                      <Component id="R13_label" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="R14_label" min="-2" max="-2" attributes="0"/>
+                      <Component id="R14" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="R15" min="-2" max="-2" attributes="0"/>
+                      <Component id="R15_label" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -694,6 +726,31 @@
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="status"/>
           </AccessibilityProperties>
+        </Component>
+        <Component class="javax.swing.JButton" name="Button_Reset">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_ResetActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Button_Stop">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_StopActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="MemoryAddress">
+        </Component>
+        <Component class="javax.swing.JLabel" name="MemAddr_label">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Constantia" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Memory Address"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="MemAddr">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
