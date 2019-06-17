@@ -732,6 +732,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="MemoryAddress">
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="MemoryAddressPropertyChange"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="MemAddr_label">
           <Properties>

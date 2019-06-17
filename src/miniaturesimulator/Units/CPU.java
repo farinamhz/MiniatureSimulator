@@ -35,12 +35,14 @@ public class CPU {
     private Mux jalrAddressMux;
     private Mux luishiftMux;
     
+    private String filepath="";
     private int instructionCount=0;
     private int runnedInstruction=0;
     private boolean finish=false;
     
     public void initialize(String filepath) throws IOException
     {
+        this.filepath=filepath;
         
         this.registerFile=new RegisterFile();
         this.dataMemory=new DataMemory();
@@ -59,6 +61,14 @@ public class CPU {
         
         this.dataMemory.loadProgram(program);
         this.instructionCount=program.size();
+    }
+    
+    public void reset() throws IOException
+    {
+        initialize(filepath);
+        this.pc=0;
+        this.runnedInstruction=0;
+        this.finish=false;
     }
     
     public void run1Step()
@@ -196,7 +206,10 @@ public class CPU {
         return runnedInstruction;
     }
 
-    
+    public int getMemoryValue(int address)
+    {
+        return this.dataMemory.readInstruction(address);
+    }
     
     
 }

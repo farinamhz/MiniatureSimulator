@@ -5,10 +5,16 @@
  */
 package miniaturesimulator;
 
+import java.awt.Color;
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import miniaturesimulator.Units.CPU;
 
 /**
@@ -17,6 +23,7 @@ import miniaturesimulator.Units.CPU;
  */
 public class Display extends javax.swing.JFrame {
     private CPU cpu;
+    private volatile boolean run=false;
     private volatile boolean updated=false;
     
 
@@ -26,6 +33,23 @@ public class Display extends javax.swing.JFrame {
     public Display() {
         initComponents();
         setIconImage(Button_Initialize,Button_Run,Button_StepRun,Button_Stop ,Button_Reset);
+        statusLabel.setFont(new java.awt.Font("Constantia", 1, 13));
+        this.MemoryAddress.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateMemortyRes();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateMemortyRes();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateMemortyRes();
+            }
+        });
         
     }
 
@@ -266,6 +290,12 @@ public class Display extends javax.swing.JFrame {
         Button_Stop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_StopActionPerformed(evt);
+            }
+        });
+
+        MemoryAddress.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                MemoryAddressPropertyChange(evt);
             }
         });
 
@@ -520,13 +550,14 @@ public class Display extends javax.swing.JFrame {
         if(cpu==null)
         {
            statusLabel.setText("no code to run");
+           colorFlashStatusLabel();
             return; 
         }
         
         if(cpu.isFinished())
         {
             statusLabel.setText("code is finished");
-            
+            colorFlashStatusLabel();
             return;
         }
         updated=false;
@@ -536,36 +567,71 @@ public class Display extends javax.swing.JFrame {
         if(cpu.isFinished())
         {
             statusLabel.setText("code is finished");
-            
+            colorFlashStatusLabel();
             return;
         }
     }//GEN-LAST:event_Button_StepRunActionPerformed
 
+    private void colorFlashStatusLabel()
+    {
+        
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    for (int i = 0; i < 4; i++) 
+                    {
+                        try {
+                        statusLabel.setForeground(Color.red);
+                        
+                            Thread.sleep(300);
+                        
+                        statusLabel.setForeground(Color.BLACK);
+                        Thread.sleep(300);
+                        } catch (InterruptedException ex) {
+                            
+                        }
+                    }
+                        statusLabel.setText("");
+                }
+            }).start();
+        
+        
+    }
+    
     private void Button_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RunActionPerformed
         
         if(cpu==null)
         {
            statusLabel.setText("no code to run");
+            colorFlashStatusLabel();
             return; 
         }
         
         if(cpu.isFinished())
         {
             statusLabel.setText("code is finished");
+            colorFlashStatusLabel();
             return;
         }
         
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while(!cpu.isFinished())
+                run=true;
+                while(!cpu.isFinished() && run)
                 {
+                    
                     updated=false;
                 cpu.run1Step();
                 updateUi();
                 while(!updated);
                 }
-                statusLabel.setText("code is finished");
+                if(cpu.isFinished())
+                {
+                    statusLabel.setText("code is finished");
+                    colorFlashStatusLabel();
+                }
+                    
             }
         }).start();
         
@@ -575,18 +641,43 @@ public class Display extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_RunActionPerformed
 
     private void Button_StopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_StopActionPerformed
-        // TODO add your handling code here:
+        run=false;
     }//GEN-LAST:event_Button_StopActionPerformed
 
     private void Button_ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_ResetActionPerformed
-        // TODO add your handling code here:
+        if(cpu!=null)
+            try {
+                cpu.reset();
+                updateUi();
+                statusLabel.setText("");
+        } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+        }
+        
     }//GEN-LAST:event_Button_ResetActionPerformed
+
+    private void MemoryAddressPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_MemoryAddressPropertyChange
+        
+    }//GEN-LAST:event_MemoryAddressPropertyChange
+    
+    private void updateMemortyRes()
+    {
+        
+        if(cpu==null)
+            return;
+        
+       try {
+            this.MemAddr.setText(cpu.getMemoryValue(Integer.parseInt(this.MemoryAddress.getText()))+"");
+        } catch (Exception e) {
+        } 
+    }
     
     private void updateUi()
     {
         regTable();
         usage();
         instruction();
+        updateMemortyRes();
         this.updated=true;
     }
     private void regTable (){
